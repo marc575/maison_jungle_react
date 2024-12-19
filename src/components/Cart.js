@@ -35,7 +35,7 @@ function Cart({cart, updateCart, isOpen, setIsOpen} ) {
 					</div>
                 </div>
             ) : (
-                <div>Votre panier est vide</div>
+                <div className='empty-cart'>Votre panier est vide</div>
             )}
         </div>
 

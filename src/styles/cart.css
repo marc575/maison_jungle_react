@@ -66,6 +66,10 @@
 	.lmj-cart-toggle-button {
 		padding: 10px;
 	}
+
+	.empty-cart {
+		padding: 10px;
+	}
 }
 
 @media screen and (max-width: 1200px) {
