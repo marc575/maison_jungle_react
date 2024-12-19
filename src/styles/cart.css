@@ -45,18 +45,39 @@
 .action-cart {
 	display: flex;
 	flex-direction: row;
-	justify-content: space-between;
+	align-items: center;
+	gap: 10px;
 }
 
 @media screen and (max-width: 759px) {
     .lmj-cart {
 		width: 100%;
+		padding: 0;
+	}
+
+	.action-cart {
+		flex-direction: column;
+	}
+
+	.cart-content {
+		padding: 10px;
+	}
+
+	.lmj-cart-toggle-button {
+		padding: 10px;
 	}
 }
 
 @media screen and (max-width: 1200px) {
     .action-cart {
 		flex-direction: column;
-		gap: 10px;
+	}
+
+	.clear-cart {
+		width: 100%;
+	}
+
+	.confirm-cart {
+		width: 100%;
 	}
 }

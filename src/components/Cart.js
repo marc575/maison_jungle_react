@@ -19,7 +19,7 @@ function Cart({cart, updateCart, isOpen, setIsOpen} ) {
 				Fermer X
 			</button>
             {cart.length > 0 ? (
-                <div>
+                <div className='cart-content'>
                     <h2>Panier</h2>
                     <ul>
                         {cart.map(({ name, price, amount }, index) => (
