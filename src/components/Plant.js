@@ -1,22 +1,26 @@
 import CareScale from './CareScale';
 import '../styles/plantItem.css';
+import ReadMore from './ReadMore';
 
-function Plant ({name, cover, id, light, water, price}) {
+function Plant ({name, cover, id, light, water, price, description}) {
     return (
-        <li key={id} className='lmj-plant-item' onClick={() => handleClick(name) } >
-            <span className='lmj-plant-item-price'>{price}€</span>
+    <>
+        <div key={id} className='lmj-plant-item'>
+            <span className='lmj-plant-item-price'>{price} €</span>
             <img className='lmj-plant-item-cover' src={cover} alt={`${name} cover`} />
-            {name}
-            <div>
+            <h2 onClick={() => handleClick(name) }>{name}</h2> 
+            <ReadMore text={description} maxLength={100} />
+            <div className='lmj-plant-item-elt'>
                 <CareScale careType='water' scaleValue={water} />
 		        <CareScale careType='light' scaleValue={light} />
             </div>
-        </li>
+        </div>
+    </>
     )
 }
 
-function handleClick(plantName) {
-    alert(`Vous voulez acheter 1 ${plantName} ? Très bon choix 🌱✨`)
+function handleClick(name) {
+    alert(`Vous voulez acheter 1 ${name} ? Très bon choix 🌱✨`)
 }
 
 export default Plant

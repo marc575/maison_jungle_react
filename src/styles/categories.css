@@ -1,8 +1,21 @@
 .lmj-categories {
-	text-align: center;
-	padding-top: 30px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 20px;
 }
 
-.lmj-categories-select {
-	margin-right: 15px;
+.cart-categories {
+	display: flex;
+	justify-content: space-between;
+	gap: 30px;
+	align-items: center;
+	margin: 30px 20px;
+}
+
+.cart {
+	border-radius: 30px;
+	padding: 10px 14px 10px 12px;
+	cursor: pointer;
+	background-color: #31b472;
 }

@@ -1,14 +1,57 @@
 .lmj-footer {
-	color: black;
-	padding: 32px;
-	border-top: solid 3px black;
+	color: white;
+	padding: 80px 32px 32px 32px;
 	display: flex;
 	justify-content: flex-start;
+	text-align: center;
 	flex-direction: column;
 	align-items: center;
+	gap: 10px;
 	font-weight: 500;
+	background-color: black;
+	font-size: 16px;
+}
+
+.lmj-footer-form {
+	background-color: white;
+	border-radius: 10px;
+}
+
+.lmj-footer-form input {
+	border: none;
 }
 
 .lmj-footer-elem {
 	margin-bottom: 10px;
+}
+
+.lmj-footer-icon {
+	border-top: 1px solid #e2e2e2;
+	margin-top: 50px;
+	padding-top: 30px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	align-items: center;
+	gap: 30px;
+	width: 100%;
+}
+
+.list-icon {
+	display: flex;
+	gap: 10px;
+}
+
+a {
+	text-decoration: none;
+	color: gold;
+}
+
+@media screen and (max-width: 749px) {
+    .lmj-footer-icon {
+		flex-direction: column-reverse;
+		justify-content: center;
+		align-items: center;
+	}
 }

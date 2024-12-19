@@ -1,13 +1,12 @@
-import { useState, useEffect } from 'react'
+import { useEffect } from 'react'
 import '../styles/cart.css'
 
-function Cart({cart, updateCart} ) {
-	const [isOpen, setIsOpen] = useState(true)
+function Cart({cart, updateCart, isOpen, setIsOpen} ) {
 	const total = cart.reduce(
 		(acc, plantType) => acc + plantType.amount * plantType.price, 0
 	)
     useEffect(() => 
-		{document.title = `LMJ: ${total}€ d'achats`}
+		{document.title = `${total} € d'achats | TM - La Maison Jungle`}
 		, [total]
 	)
 
@@ -17,7 +16,7 @@ function Cart({cart, updateCart} ) {
 				className='lmj-cart-toggle-button'
 				onClick={() => setIsOpen(false)}
 			>
-				Fermer
+				Fermer X
 			</button>
             {cart.length > 0 ? (
                 <div>
@@ -25,12 +24,15 @@ function Cart({cart, updateCart} ) {
                     <ul>
                         {cart.map(({ name, price, amount }, index) => (
                             <div key={`${name}-${index}`}>
-                                    {name} {price}€ x {amount}
+                                    {name} {price} € x {amount}
                             </div>
                         ))}
                     </ul>
-                    <h3>Total :{total}€</h3>
-                    <button onClick={() => updateCart([])}>Vider le panier</button>
+                    <h3>Total : {total} €</h3>
+					<div className='action-cart'>
+                    	<button onClick={() => validateCart(total)} className='confirm-cart'>Valider votre achat</button>
+                    	<button onClick={() => updateCart([])} className='clear-cart'>Vider le panier</button>
+					</div>
                 </div>
             ) : (
                 <div>Votre panier est vide</div>
@@ -47,6 +49,10 @@ function Cart({cart, updateCart} ) {
 			</button>
 		</div>
 	)
+}
+
+function validateCart(total) {
+    alert(`Merci pour votre confiance ? Votre commande de ${total} € a été pris en charge 🌱✨`)
 }
 
 export default Cart

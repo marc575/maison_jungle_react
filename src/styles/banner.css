@@ -1,19 +1,41 @@
 .lmj-banner {
-	color: black;
+	color: white;
 	text-align: right;
-	padding: 32px;
-	border-bottom: solid 3px black;
+	min-height: 35vh;
+	font-size: calc(10px + 2vmin);
 	display: flex;
 	justify-content: flex-end;
 	flex-direction: row;
 	align-items: center;
+	background-image: linear-gradient(
+		to bottom,
+		rgba(0, 0, 0, 0),
+		rgba(0, 0, 0, 0.7)
+	  ), url('../assets/bg-img-2.jpg');
+	  background-position: center top;
 }
 
 .lmj-title {
-	padding-left: 32px;
+	padding-right: 32px;
 }
 
 .lmj-logo {
 	height: 45px;
 	width: 45px;
+    animation: App-logo-spin infinite 3s linear;
+}
+
+@keyframes App-logo-spin {
+	from {
+	  transform: rotate(-10deg);
+	}
+	to {
+	  transform: rotate(10deg);
+	}
+}
+
+@media screen and (max-width: 1200px) {
+    .lmj-banner {
+		min-height: 20vh;
+	}
 }

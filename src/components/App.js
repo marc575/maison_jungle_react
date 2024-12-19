@@ -6,20 +6,21 @@ import ShoppingList from './ShoppingList'
 import '../styles/layout.css'
 
 function App() {
+	const [isOpen, setIsOpen] = useState(true)
 	const savedCart = localStorage.getItem('cart')
   	const [cart, updateCart] = useState(savedCart ? JSON.parse(savedCart) : [])
 	
 	useEffect (() => {localStorage.setItem('cart', JSON.stringify(cart)) }, [cart] )
 
 	return (
-		<div>
+		<main>
 			<Banner />
 			<div className='lmj-layout-inner'>
-				<Cart cart = {cart} updateCart = {updateCart} />
-				<ShoppingList cart = {cart} updateCart = {updateCart} />
+				<Cart cart = {cart} updateCart = {updateCart} isOpen = {isOpen} setIsOpen={setIsOpen} />
+				<ShoppingList cart = {cart} updateCart = {updateCart} setIsOpen={setIsOpen}/>
 			</div>
 			<Footer />
-		</div>
+		</main>
 	)
 }
 
