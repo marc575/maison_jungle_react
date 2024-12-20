@@ -54,4 +54,7 @@ a {
 		justify-content: center;
 		align-items: center;
 	}
+	.lmj-footer {
+		padding: 80px 12px 32px 12px;
+	}
 }

@@ -6,7 +6,7 @@
 .lmj-plant-list {
 	margin: 20px;
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
 	gap: 20px;
 }
 
@@ -20,4 +20,11 @@
 	left: 0;
 	border-radius: 50px;
 	padding: 10px 15px 8px 10px;
+}
+
+@media screen and (max-width: 749px) {
+    .lmj-plant-list {
+		margin: 10px;
+		grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+	}
 }
